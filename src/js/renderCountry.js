@@ -8,7 +8,7 @@ import { alert } from '@pnotify/core';
 
 const debounce = require('lodash.debounce');
 
-refs.input.addEventListener('input', debounce(onInputSearch, 1000));
+refs.input.addEventListener('input', debounce(onInputSearch, 500));
 
 function onInputSearch(e) {
   e.preventDefault();
