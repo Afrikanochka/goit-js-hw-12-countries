@@ -1,6 +1,7 @@
 import { refs } from './refs.js';
 import fetchCountries from './fetchCountries.js';
 import countryTpl from '../tpl/countryCard.hbs';
+import countryTplList from '../tpl/countryList';
 
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -30,7 +31,7 @@ function renderCountry(countries) {
     countryMarkup(countryTpl, countries);
     console.log(countries);
   } else if (countries.length <= 10) {
-    countryMarkup(countryTpl, countries);
+    countryMarkup(countryTplList, countries);
   }
   if (countries.length > 10) {
     alert({
