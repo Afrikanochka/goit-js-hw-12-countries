@@ -11,11 +11,10 @@ const debounce = require('lodash.debounce');
 refs.input.addEventListener('input', debounce(onInputSearch, 500));
 
 function onInputSearch(e) {
-  e.preventDefault();
   resetInputSearch();
 
   if (refs.input.value !== '') {
-    fetchCountries(refs.input.value).then(renderCountry).catch(console.error());
+    fetchCountries(refs.input.value).then(renderCountry).catch(console.error);
   }
 }
 
@@ -28,11 +27,9 @@ function countryMarkup(tpl, countries) {
 
 function renderCountry(countries) {
   if (countries.length === 1) {
-    resetInputSearch();
     countryMarkup(countryTpl, countries);
     console.log(countries);
-  } else if (countries.length !== 1 && countries.length <= 10) {
-    resetInputSearch();
+  } else if (countries.length <= 10) {
     countryMarkup(countryTpl, countries);
   }
   if (countries.length > 10) {
